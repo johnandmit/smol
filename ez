@@ -1,0 +1,27 @@
+#include <stdio.h>
+
+int main(void) 
+{
+  int tuoi;
+  printf("enter your age: ");
+  scanf("%i",&tuoi);
+  if(tuoi<6){
+    printf("Tuổi thiếu nhi");
+  }
+  if(tuoi>5&&tuoi<12){
+    printf("Tuổi thiếu niên");
+  }
+  if(tuoi>11&&tuoi<19){
+    printf(" Tuổi thanh thiếu niên");
+  }
+  if(tuoi>18&&tuoi<35){
+    printf("Tuổi thanh niên");
+  }
+  if(tuoi>34&&tuoi<60){
+    printf(" Tuổi trung niên");
+  }
+  if(tuoi>59){
+    printf("Tuổi cao niên");
+  }
+
+}
