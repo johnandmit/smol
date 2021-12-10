@@ -1,0 +1,19 @@
+#include <stdio.h>
+
+int main(void) 
+{
+  int a,b,c,d,e,f;
+  printf("nhap so hoc sinh >10: ");
+  scanf("%i",&a);
+  for(b=0;b<a;b++){
+    printf("nhap so diem toan: ");
+    scanf("%i",&c);
+    d=d+c;
+    if(c<5){
+      f++;
+    }
+  }
+  e=d/a;
+  printf("diem trung binh cua ca lop=%i\n",e);
+  printf("hoc sinh truot mon toan=%i",f);
+}
