@@ -2,20 +2,18 @@
 #include <stdio.h>
 int main()
 {
-    int x,n,a,e=0;
+    int x,n,e=0;
     printf("nhap so n va x: ");
     scanf("%i %i",&n,&x);
-    for(a=0;a<=n;a++)
+    for(unsigned int a=0;a<=n;a++)
     {
         e=e+pow(x,a);
     }
-    printf("1+x+x^2+x^3 + ... + x^n=%i\n",e);
+    printf("1 + x + x^2 + x^3 + ... + x^n = %i\n",e);
     e=0;
-    for(a=1;a<n;a++)
+    for(int a=0;a<n;a++)
     {
-        e=e+pow(x,a);
-        a++;
-        e=e-pow(x,a);
+      e += pow(-1,a)*pow(x,a);
     }
     e=e+pow(-1,n)*pow(x,n);
     printf("1 - x + x^2 - x^3 + ... + (-1)^n.x^n=%i",e);
