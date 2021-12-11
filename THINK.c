@@ -2,10 +2,10 @@
 #include <stdio.h>
 int main()
 {
- int height,weight,BMI;
+ float height,weight;
  printf("nhap can nang va chieu cao: ");
- scanf("%i %i",&weight,&height);
- BMI=weight/pow(height,2);
+ scanf("%f %f",&weight,&height);
+ float BMI=weight/pow(height,2);
  if(BMI<18.5){
    printf("Underweight");
  }
