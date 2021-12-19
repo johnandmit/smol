@@ -1,0 +1,13 @@
+#include <math.h>
+#include <stdio.h>
+int main()
+{
+float epsilon;
+float n;
+printf("nhap float tu 0 den 1: ");
+scanf("%f",&epsilon);
+for(n=0;1/(2*n+1)>=epsilon;n++){
+  }
+  
+  printf("%i",(int)n);
+}
