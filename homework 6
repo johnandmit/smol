@@ -1,0 +1,27 @@
+#include <math.h>
+#include <stdio.h>
+int main()
+{
+int n,sum,a,b;
+do{
+printf("nhap n: ");
+scanf("%i",&n);
+  }while(n<=0||n>=1000);
+if(n>=0&&n<10)
+  {
+    sum=n;
+  }
+if(n>=10&&n<100)
+  {
+    a=n/10.0;
+    n=n-a*10;
+    sum=a+n;
+  }
+if(n>=100&&n<1000){
+  a=n/100.0;
+  b=(n/10.0)-a*10;
+  n=n-(a*100+b*10);
+  sum=a+b+n;
+}
+  printf("%i",sum);
+}
