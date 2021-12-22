@@ -1,0 +1,12 @@
+#include <math.h>
+#include <stdio.h>
+int main()
+{
+int n,a,b=1;
+printf("nhap n (from 1 to 9): ");
+scanf("%i",&n);
+for(a=1;a<=10;a++){
+    b=n*a;
+    printf("%i x %i= %i\n",n,a,b);
+  }
+}
