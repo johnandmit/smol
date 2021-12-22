@@ -1,0 +1,17 @@
+#include <math.h>
+#include <stdio.h>
+int main()
+{
+int n;
+float s,x;
+printf("nhap n va x: ");
+scanf("%i %f",&n,&x);
+for(int a=1,b=1,s=1;a<=n;a++){
+    b=b*a;
+    s=s+pow(x,a)/b;
+    if(a==n){
+      printf("%i\n",s);
+      break;
+    }
+  }
+}
