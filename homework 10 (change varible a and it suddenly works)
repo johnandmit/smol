@@ -1,0 +1,19 @@
+#include <math.h>
+#include <stdio.h>
+int main()
+{
+int n;
+printf("nhap n(n<10000): ");
+scanf("%i",&n);
+for(int counter=1,line=1,a=0;line<=n;){
+    printf("%i ",counter);
+    counter++;
+    a++;
+  if(a==line){
+      printf("\n");
+      line++;
+      a=0;
+      
+    }
+  }
+}
