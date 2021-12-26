@@ -1,0 +1,13 @@
+#include <math.h>
+#include <stdio.h>
+int main(){
+  int A[]={3,10,9,2,-5,1,2,6,3,-3};
+  int TimeIisBiggerJ=0;
+  for(unsigned int j = 0;j < 10;j++){
+    for(unsigned int i = 0;i < j;i++){
+      if(A[i] > A[j])
+        TimeIisBiggerJ++;
+    }
+  }
+  printf("time A[i]>A[j]= %i",TimeIisBiggerJ);
+}
