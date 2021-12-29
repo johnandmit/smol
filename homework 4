@@ -2,13 +2,10 @@
 #include <stdio.h>
 int main()
 {
-int n,ez,a;
-do{
+  int n,ez,a;
+  do{
     printf("value of n: ");
     scanf("%i",&n);
   }while(n<10||n>100);
-  for(ez=0,a=0;ez<=n;ez++){
-    a=a+ez;
-  }
-  printf("%i",a);
+  printf("%i",n * (n + 1)/2);
 }
