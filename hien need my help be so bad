@@ -1,0 +1,14 @@
+#include <math.h>
+#include <stdio.h>
+int main()
+{
+  float epsilon,n,e;
+  printf("nhap float tu 0 den 1: ");
+  scanf("%f",&epsilon);
+  for(n=1,e=1;1/n>=epsilon;e++){
+    n=n*e;
+    if(1/n<epsilon) break;
+  }
+  
+  printf("%f",e);
+}
