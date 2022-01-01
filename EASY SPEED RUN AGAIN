@@ -2,10 +2,10 @@
 #include <stdio.h>
 int main(){
   int a[]={3,-10,9,-2,-5,-1,2,6,3,-3};
-  int counter=1,k,kIsShown=0,e=0;
+  int k,kIsShown=0;
   printf("enter k: ");
   scanf("%i",&k);
-  for(;counter<=10;counter++,e++){
+  for(int e = 0;e<10;e++){
     if(a[e]==k){
       kIsShown++;
     }
