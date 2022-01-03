@@ -2,30 +2,38 @@
 #include <stdio.h>
 int main()
 {
-  float base,height,radius,answer;
-  int choice,a;
-  for(a=0;a==0;a=a){
-  printf("\n1.Area of the triangle\n2.Area of the rectangle\n3.Area of the circle\n0. Exit program! \n Enter your choice: ");
-  scanf("%i",&choice);
-  if(choice==0) break;
-  if(choice!=0&&choice!=1&&choice!=2&&choice!=3){
-    printf("Error invalid choice");
-    break;
-  }
-  switch(choice){
-    case 0:
-    case 1:printf("Enter the base and height of the triangle: ");
-    scanf("%f %f",&base,&height);
-    answer=base*height/2;
-    printf("area of triangle=%f\n",answer);
-    case 2: printf("Enter the base and height of the rectangle: ");
-    scanf("%f %f",&base,&height);
-    answer=base*height;
-    printf("area of rectangle=%f\n",answer);
-    case 3: printf("Enter the radius of the circle: ");
-    scanf("%f",&radius);
-    answer=(3.14159265359)*pow(radius,2);
-    printf("area of circle=%f\n",answer);
+    float base, height, radius, answer;
+    int choice, a;
+    for (a = 0; a == 0; a = a)
+    {
+        printf("\n1.Area of the triangle\n2.Area of the rectangle\n3.Area of the circle\n0. Exit program! \n Enter your choice: ");
+        scanf("%i", &choice);
+        switch (choice)
+        {
+        case 0:
+            return 0;
+            break;
+        case 1:
+            printf("Enter the base and height of the triangle: ");
+            scanf("%f %f", &base, &height);
+            answer = base * height / 2;
+            printf("area of triangle=%f\n", answer);
+            break;
+        case 2:
+            printf("Enter the base and height of the rectangle: ");
+            scanf("%f %f", &base, &height);
+            answer = base * height;
+            printf("area of rectangle=%f\n", answer);
+            break;
+        case 3:
+            printf("Enter the radius of the circle: ");
+            scanf("%f", &radius);
+            answer = (3.14159265359) * pow(radius, 2);
+            printf("area of circle=%f\n", answer);
+            break;
+        default:
+            printf("Error invalid choice");
+            break;
+        }
     }
-  }
 }
