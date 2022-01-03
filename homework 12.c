@@ -1,21 +1,23 @@
 #include <math.h>
 #include <stdio.h>
+#define true 1
+#define false 0
+
 int main()
 {
-    int n, counter = 0,big=0,small=0,counter1 = 0;
-    float average,sum=0;
+    int counter = 0,big=0,small=0,counter1;
+    float average,sum=0,x;
     int a[1000];
-    do
+    while (true)
     {
         printf("enter n: ");
-        scanf("%i", &n);
-        if (n != 0)
-        {
-            a[counter] = n;
-            counter++;
-            counter1++;
-        }
-    } while (n != 0);
+        scanf("%f", &x);
+        if(x == 0)
+            break;
+        a[counter] = x;
+        counter++;
+    };
+    counter1 = counter;
     counter = 0;
     small=a[0];
     big=a[0];
@@ -31,4 +33,4 @@ int main()
     }
     average=sum/counter1;
     printf("the biggest number is:%i\nthe smallest number is:%i\nthe average is:%f",big,small,average);
-}
+    }
