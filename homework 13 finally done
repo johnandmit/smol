@@ -1,9 +1,16 @@
 #include <math.h>
 #include <stdio.h>
 int main(){
-  int n[]={3,-10,9,-2,5,-1,2,6,3,0};
-  int a=-1,counter=1,sum=0,negativeSum=0,nIs0=0,x;
-  for(;counter<=10;counter++){
+  int n[1000];
+  int a=-1,counter=1,sum=0,negativeSum=0,nIs0=0,x,ez=0,thing;
+  printf("enter n>10 to stop");
+  do{
+      printf("enter n:");
+      scanf("%i",&thing);
+      n[ez]=thing;
+      ez++;
+  }
+  for(;counter<=ez;counter++){
   a++;
   printf("%i,",n[a]);
   if(n[a]==0){
