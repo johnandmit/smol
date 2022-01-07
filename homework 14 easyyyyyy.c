@@ -23,9 +23,10 @@ int main()
       }
     }
   } while (n < 10);
+  printf("\nc: ");
   for (i = 0; i < bcounter; i++)
     printf("%d, ", B[i]);
-  printf("\n");
+  printf("\nb: ");
   for (i = 0; i < cCounter; i++)
     printf("%d, ", C[i]);
   printf("\n");
