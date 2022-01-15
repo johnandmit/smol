@@ -1,3 +1,4 @@
+
 #include <stdio.h>
 #include <ctype.h>
 #include <string.h>
@@ -5,30 +6,34 @@
 int main(void)
 {
     char s[8];
-    int n,i=0, tmp,k,viTriMax,e;
-    do{
+    int n, i = 0, tmp, k, viTriMax, e;
+    do
+    {
         printf("enter n:");
-        scanf("%i",&n);
-        s[i]=n;
+        scanf("%i", &n);
+        if (i >= 7 || n == 0)
+            break;
+        s[i] = n;
         i++;
-    }while(i<7&&n!=0);
-    printf("%i",s[0]);
-    for(e=1;e<i;e++){
-        printf(",%i",s[e]);
+    } while (1);
+    printf("%i", s[0]);
+    for (e = 1; e < i; e++)
+    {
+        printf(",%i", s[e]);
     }
-    k=i+1;
+    k = i+1;
     printf("\n");
-    while (k > 1)
+    while (k >= 0)
     {
         viTriMax = 0;
-        for (e = 1; e < k; e++)
+        for (e = 0; e < k; e++)
             if (abs(s[e]) > abs(s[viTriMax]))
                 viTriMax = e;
         tmp = s[viTriMax];
-        s[viTriMax] = s[k - 1];
-        s[k - 1] = tmp;
+        s[viTriMax] = s[k-1];
+        s[k-1] = tmp;
 
-        k = k - 1;
+        k--;
     }
     for (e = 1; e <= i; e++)
         printf("%d, ", s[e]);
