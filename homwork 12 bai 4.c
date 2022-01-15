@@ -1,4 +1,3 @@
-
 #include <stdio.h>
 #include <ctype.h>
 #include <string.h>
@@ -21,17 +20,17 @@ int main(void)
     {
         printf(",%i", s[e]);
     }
-    k = i+1;
+    k = i;
     printf("\n");
     while (k >= 0)
     {
         viTriMax = 0;
-        for (e = 0; e < k; e++)
+        for (e = 0; e <= k; e++)
             if (abs(s[e]) > abs(s[viTriMax]))
                 viTriMax = e;
         tmp = s[viTriMax];
-        s[viTriMax] = s[k-1];
-        s[k-1] = tmp;
+        s[viTriMax] = s[k];
+        s[k] = tmp;
 
         k--;
     }
