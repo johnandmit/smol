@@ -1,37 +1,44 @@
+
 #include <stdio.h>
 #include <ctype.h>
 #include <string.h>
 int main(void)
 {
-    char s1[1000];
-    int n, x, i = 0, eh, yes = 0,sum2=0;
-    float ave, sum;
+    int s1[10];
+    int n, i = 0, sum2 = 0, s;
+    float x,ave, sum = 0;
     printf("enter s:");
     scanf("%i", &n);
+    if (n < 0 || n > 10)
+        return 0;
     do
     {
-        printf("enter x: ");
-        scanf("%i", &x);
-        if (x > 0 && i <= n)
+        printf("enter phan tu: ");
+        scanf("%i", &s);
+        if (i <= n)
         {
-            s1[i] = x;
-            sum2+=s1[i];
-        }
-        if (x > n)
-        {
-            yes = 1;
+            s1[i] = s;
+            sum2 = sum2 + s;
         }
         i++;
     } while (i < n);
-    eh = s1[0];
-    for (int s = 0; s < eh; s++)
+    for (int ez = 0; ez < i; ez++)
+        printf("%i ", s1[ez]);
+    printf("\nenter x: ");
+    scanf("%f", &x);
+    if (x > n)
     {
-        sum += s1[s];
+        printf("sum = %i", sum2);
     }
-    ave = sum / eh;
-    if (yes == 1)
+    else
     {
-        printf("sum=%i\n", sum2);
+        for (int s = 0; s < x; s++)
+        {
+            sum += s1[s];
+
+        }
+
+        ave = sum / x;
+        printf("ave = %f", ave);
     }
-    printf("ave = %f", ave);
 }
