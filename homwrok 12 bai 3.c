@@ -1,4 +1,3 @@
-
 #include <stdio.h>
 #include <ctype.h>
 #include <string.h>
@@ -6,7 +5,7 @@ int main(void)
 {
     int s1[10];
     int n, i = 0, sum2 = 0, s;
-    float x,ave, sum = 0;
+    float x, ave, sum = 0;
     printf("enter s:");
     scanf("%i", &n);
     if (n < 0 || n > 10)
@@ -15,15 +14,19 @@ int main(void)
     {
         printf("enter phan tu: ");
         scanf("%i", &s);
-        if (i <= n)
+        if (i < n)
         {
             s1[i] = s;
-            sum2 = sum2 + s;
         }
         i++;
     } while (i < n);
     for (int ez = 0; ez < i; ez++)
         printf("%i ", s1[ez]);
+    for (int ez = 0; ez < i; ez++)
+    {
+        s=s1[ez];
+        sum2 = sum2 + s;
+    }
     printf("\nenter x: ");
     scanf("%f", &x);
     if (x > n)
@@ -35,7 +38,6 @@ int main(void)
         for (int s = 0; s < x; s++)
         {
             sum += s1[s];
-
         }
 
         ave = sum / x;
