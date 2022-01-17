@@ -11,4 +11,7 @@ int main(void)
     gets(s1);
     if(strcmp(s,s1)==0)
     printf("s=s1");
+    else{
+        printf("s1!=s");
+    }
 }
