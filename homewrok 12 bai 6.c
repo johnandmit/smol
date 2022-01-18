@@ -37,17 +37,11 @@ int main(void)
             break;
         }
     }
-    for (int i = 0; i < strlen(s); i++)
-    {
-        if(strlen(s)>=6&&strlen(s)<=16){
+        if(strlen(s)>=6&&strlen(s)<=16)
             yeman++;
-            break;
-        }
-    }
     if(yeman==5){
         printf("password hop le");
     }
     else{
         printf("password khong hop le");
-    }
-}
+    }}
