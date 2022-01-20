@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <math.h>
 float findmin(float A[], int n)
 {
     float min = A[0];
