@@ -6,17 +6,15 @@ int find_x(int a[], int n, int key)
         if (a[i] == key)
         {
             return i;
-            break;
         }
-        if(i==7){
+        if(i==n-1){
             return 0;
-            break;
         }
     }
 }
 int main()
 {
-    int a[8] = {3, 2, 7, 1, 9, 2, 8, 5},key=8;
+    int a[8] = {3, 2, 7, 1, 9, 2, 8, 5},key=1;
     if (find_x(a, 8, key) == 0)
     {
         printf("key is not in a");
