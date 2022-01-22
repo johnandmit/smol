@@ -8,11 +8,13 @@ int is_prime(int n)
         {
             return 0;
         }
+        if(n==1)
+            return 0;
     }
     return 1;
 }
 int main()
 {
-    int n = 4;
+    int n = 2;
     printf("%i", is_prime(n));
 }
