@@ -1,7 +1,5 @@
 #include <stdio.h>
-#include <ctype.h>
 #include <string.h>
-#include <math.h>
 int main(void)
 {
     char s[1000], s1[1000];
