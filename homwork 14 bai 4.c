@@ -7,10 +7,8 @@ int find_x(int a[], int n, int key)
         {
             return i;
         }
-        if(i==n-1){
-            return -1;
-        }
     }
+    return -1;
 }
 int main()
 {
