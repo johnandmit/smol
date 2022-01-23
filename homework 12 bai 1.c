@@ -7,7 +7,7 @@ int main(void)
     int yeMan=0;
     printf("enter string: ");
     gets(s);
-    for(int i=strlen(s);i>0;i--){
+    for(int i=strlen(s)-1;i>=0;i--){
         printf("%c",s[i]);
     }
 }
