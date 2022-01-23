@@ -2,19 +2,13 @@
 #include <math.h>
 int is_prime(int n)
 {
-    for (int i = 2; i <= sqrt(n); i++)
-    {
-        if (n % i == 0)
-        {
-            return 0;
-        }
-        if(n==1)
-            return 0;
-    }
-    return 1;
+    if(n>1)
+        for (size_t i = 2; i <= sqrt(n); i++)
+            if (n % i)
+                return 1;
+    return 0;
 }
 int main()
 {
-    int n = 2;
-    printf("%i", is_prime(n));
+    printf("%i", is_prime(-2));
 }
