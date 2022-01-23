@@ -26,10 +26,10 @@ int sort(int n, float num)
 }
 void text(float num,int ez,int temp)
 {
-    
-    if(temp!=10){
+    if(num!=10){
     if (ez == 1)
-        printf("mot ");}
+        printf("mot ");    
+    }
     if (ez == 2)
         printf("hai ");
     if (ez == 3)
@@ -49,7 +49,10 @@ void text(float num,int ez,int temp)
     if (num == 100)
         printf("tram ");
     if (num == 10)
-        printf("muoi ");
+        if(ez == 0)
+            printf("linh ");
+        else
+            printf("muoi ");
 }
 int main()
 {
@@ -57,6 +60,7 @@ int main()
     float num;
     printf("enter number: ");
     scanf("%i", &n);
+    
     if (check(n) == 0)
         return 0;
     e = sort(n, num);
