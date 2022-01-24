@@ -12,7 +12,7 @@ int main()
     char s[50],e[50];
     printf("enter s: ");
     gets(s);
-    printf("enter 3: ");
+    printf("enter e: ");
     gets(e);
     strrev(e);
     printf("%i",ezcheck(s,e));
