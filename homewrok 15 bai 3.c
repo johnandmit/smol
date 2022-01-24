@@ -12,7 +12,8 @@ int main()
     char s[50],e[50];
     printf("enter s: ");
     gets(s);
-    strcpy(e,s);
+    printf("enter 3: ");
+    gets(e);
     strrev(e);
     printf("%i",ezcheck(s,e));
 }
