@@ -11,6 +11,7 @@ void ezcheck1(char word1[], char word2[])
             sameChars[sameAmount++] = word1[i];
         }
     }
+    sameChars[sameAmount] = '\0';
     printf("%s\n",sameChars);
 
 }
