@@ -1,17 +1,18 @@
 #include <stdio.h>
 #include <string.h>
-void ezcheck(char word1[], char word2[])
+void ezcheck1(char word1[], char word2[])
 {
     char sameChars[256];
     int sameAmount = 0;
     int len = strlen(word1);
     for (int i = 0; i < len; i++)
     {
-        if(strchr(word2, word1[i]))
+        if(strchr(word2, word1[i])){
             sameChars[sameAmount++] = word1[i];
+        }
     }
-    sameChars[sameAmount] = '\0';
     printf("%s\n",sameChars);
+
 }
 int main()
 {
@@ -20,5 +21,8 @@ int main()
     gets(word1);
     printf("enter word 2: ");
     gets(word2);
-    ezcheck(word1, word2);
+    if(strlen(word1)<strlen(word2))
+        ezcheck1(word1, word2);
+    else 
+        ezcheck1(word2, word1);
 }
