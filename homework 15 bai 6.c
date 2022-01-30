@@ -1,5 +1,13 @@
 #include <stdio.h>
 #include <math.h>
+void enterX(int n,int x,int s[]){
+    for (int e = 0; e < n; e++)
+    {
+        printf("enter x: ");
+        scanf("%i", &x);
+        s[e] = x;
+    }
+}
 void ezcheck(int n, int s[])
 {
     int i=0,yes;
@@ -22,11 +30,6 @@ int main()
     int n, s[80], x;
     printf("enter n: ");
     scanf("%i", &n);
-    for (int e = 0; e < n; e++)
-    {
-        printf("enter x: ");
-        scanf("%i", &x);
-        s[e] = x;
-    }
+    enterX(n,x,s);
     ezcheck(n, s);
 }
