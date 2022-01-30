@@ -8,6 +8,7 @@ int check(char s[], int n)
         if (isupper(s[i]) == 1)
         {
             yes = 0;
+            return yes;
         }
     }
     return yes;
