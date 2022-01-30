@@ -2,10 +2,10 @@
 #include <string.h>
 int ezcheck(char word1[],char word2[])
 {
-    if (strcmp(word1, word2)==0)
-        return 1;
-    else
+    if (strcmp(word1, word2))
         return 0;
+    else
+        return 1;
 }
 int main()
 {
