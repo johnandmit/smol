@@ -4,7 +4,7 @@ void ezcheck(int n)
 {
     int i=0,yes,sum=0;
 
-    for (int e = 0; e < n; e++)
+    for (int e = 2; e < n; e++)
     {
         yes=1;
         for (int a = 2; a < e;a++)
@@ -12,9 +12,9 @@ void ezcheck(int n)
             if(e%a==0){
                 yes=0;}
         }
-        if(yes==1&&e!=0&&e!=1){
+        if(yes==1){
             sum=sum+e;
-            printf("%i ",e);
+            printf("%i\n",e);
         }
     }
     printf("sum = %i ",sum);
