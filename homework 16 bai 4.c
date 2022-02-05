@@ -10,7 +10,7 @@ void check(int n, int m)
             sum+=i;
         }
     }
-    printf("%i ",p);
+    printf("number of uoc = %i ",p);
     printf("\nsum = %i",sum);
 }
 int main()
