@@ -14,6 +14,6 @@ int is_sorted(int n[])
 }
 int main()
 {
-    int n[10]={9,8,7,6,5,4,3,2,1,0};
+    int n[10]={2,5,1,6,8,3,7,2,5,0};
     printf("%i ",is_sorted(n));
 }
