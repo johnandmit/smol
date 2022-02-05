@@ -7,13 +7,13 @@ void ezcheck1(char word1[], char word2[])
     int len = strlen(word1);
     for (int i = 0; i < len; i++)
     {
-        if(strchr(word2, word1[i])&&strchr(sameChars,word1[i])==0){
+        if (strchr(word2, word1[i]) && strchr(sameChars, word1[i]) == 0)
+        {
             sameChars[sameAmount++] = word1[i];
         }
     }
-    for(int i=0;i<sameAmount;i++)
-        printf("%c ",sameChars[i]);
-
+    for (int i = 0; i < sameAmount; i++)
+        printf("%c ", sameChars[i]);
 }
 int main()
 {
