@@ -8,7 +8,7 @@ void ezcheck1(char word1[], char word2[])
     if(strlen(word1)<strlen(word2))
         strcpy(tempthingy,word1);
         strcpy(word1,word2);
-        strcpy(word2,word1);
+        strcpy(word2,tempthingy);
     for (int i = 0; i < len; i++)
     {
         if(strchr(word2, word1[i])&&strchr(sameChars,word1[i])==0){
