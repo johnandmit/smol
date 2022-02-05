@@ -1,16 +1,18 @@
 #include <stdio.h>
 #include <math.h>
-int isPrime(int n){
-    if(n<2)
+int isPrime(int n)
+{
+    if (n < 2)
         return 0;
-    else{
-        for (int a = 2; a < n;a++)
+    else
+    {
+        for (int a = 2; a < n; a++)
         {
-            if(n%a==0)
+            if (n % a == 0)
                 return 0;
         }
         return 1;
-        }
+    }
 }
 void ezcheck(int n)
 {
