@@ -1,39 +1,31 @@
 #include <stdio.h>
 int main()
 {
-    int n, s[11], i = 0, x, largest2,q=0,temp;
+    int n, arr[11], x;
+    unsigned i = 0;
     printf("enter n: ");
     scanf("%i", &n);
-    do
+    for (i = 0; i < n; i++)
     {
         printf("enter x: ");
         scanf("%i", &x);
-        s[i] = x;
-        i++;
-
-    } while (i < n);
-    for (int e = 0; e < i; e++)
-    {
-        printf("%i ", s[e]);
+        arr[i] = x;
     }
-    for (int e = 0; e < i; e++)
+    for (i = 0; i < n; i++)
+        printf("%i ", arr[i]);
+    int largest1st, largest2nd;
+    largest1st = largest2nd = -2147483648;
+    for (i = 0; i < n; i++)
     {
-        if (s[q] < s[e])
+        if(largest1st < arr[i])
         {
-            q=e;
+            largest2nd = largest1st;
+            largest1st = arr[i];
+        }
+        else if(largest2nd < arr[i])
+        {
+            largest2nd = arr[i];
         }
     }
-    temp=s[i-1];
-    s[q]=temp;
-    s[i-1]=0;
-    q=0;
-    for (int e = 0; e < i-1; e++)
-    {
-        if (s[q] < s[e])
-        {
-            q=e;
-        }
-    }
-    largest2=s[q];
-    printf("2nd largest=%i ", largest2);
+    printf("2nd largest=%i ", largest2nd);
 }
