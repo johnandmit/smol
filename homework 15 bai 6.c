@@ -8,22 +8,26 @@ void enterX(int n,int x,int s[]){
         s[e] = x;
     }
 }
+int isPrime(int n){
+    if(n<2)
+        return 0;
+    else{
+        for (int a = 2; a < n;a++)
+        {
+            if(n%a==0)
+                return 0;
+        }
+        return 1;
+        }
+}
 void ezcheck(int n, int s[])
 {
-    int i=0,yes;
+    int i=0;
     for (int e = 0; e < n; e++)
     {
-        yes = 1;
-        for (int a = 2; a < s[e];a++)
-        {
-            if(s[e]%a==0)
-                yes=0;
-        }
-        if(yes==1){
-            i++;
-        }
+        if(isPrime(s[e])==1)
+            printf("%i ",s[e]);
     }
-    printf("%i ",i);
 }
 int main()
 {
