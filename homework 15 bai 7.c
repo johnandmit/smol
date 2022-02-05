@@ -1,23 +1,30 @@
 #include <stdio.h>
 #include <math.h>
+int isPrime(int n){
+    if(n<2)
+        return 0;
+    else{
+        for (int a = 2; a < n;a++)
+        {
+            if(n%a==0)
+                return 0;
+        }
+        return 1;
+        }
+}
 void ezcheck(int n)
 {
-    int i=0,yes,sum=0;
+    int i = 0, yes, sum = 0;
 
     for (int e = 2; e < n; e++)
     {
-        yes=1;
-        for (int a = 2; a < e;a++)
+        if (isPrime(e) == 1)
         {
-            if(e%a==0){
-                yes=0;}
-        }
-        if(yes==1){
-            sum=sum+e;
-            printf("%i\n",e);
+            sum = sum + e;
+            printf("%i\n", e);
         }
     }
-    printf("sum = %i ",sum);
+    printf("sum = %i ", sum);
 }
 int main()
 {
