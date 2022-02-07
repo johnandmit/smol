@@ -15,7 +15,7 @@ int main(){
     scanf("%s",&a[i].HoTen);
     printf("enter diem: ");
     scanf("%f",&a[i].Diem);
-    if(9<=a[i].Diem&&10<=a[i].Diem)
+    if(9<=a[i].Diem&&a[i].Diem<=10)
         {
             strcpy(a[i].Loai, "Gioi");
         }
