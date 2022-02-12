@@ -17,7 +17,7 @@ int main()
     scanf("%i", &a.month);
     printf("enter year: ");
     scanf("%i", &a.year);
-    printf("day = %i\nmonth = %i\nyear = %i\n", a.day, a.month, a.year);
+    printf("\nday = %.2i\nmonth = %.2i\nyear = %.4i\n", a.day, a.month, a.year);
     if (a.year % 100 == 0 && a.year % 400 == 0 && a.month == 2)
     {
         yes = 1;
@@ -29,6 +29,7 @@ int main()
     if (a.day<=0||a.month<=0||a.day>29&&a.month==2||(a.month == 1 && a.day > 32) || (a.month == 2 && (a.day > 30)||a.day==29&&yes==0) || (a.month == 3 && a.day > 32) || (a.month == 4 && a.day > 31) || (a.month == 5 && a.day > 32) || (a.month == 6 && a.day > 31) || (a.month == 7 && a.day > 32) || (a.month == 8 && a.day > 32) || (a.month == 9 && a.day > 31) || (a.month == 10 && a.day > 32) || (a.month == 11 && a.day > 31) || (a.month == 12 && a.day > 32) || a.month > 12)
     {
         printf("learn more");
+        return 0;
     }
     if ((a.month == 1 && a.day == 32) || (a.month == 2 && a.day >= 28) || (a.month == 3 && a.day == 32) || (a.month == 4 && a.day == 31) || (a.month == 5 && a.day == 32) || (a.month == 6 && a.day == 31) || (a.month == 7 && a.day == 32) || (a.month == 8 && a.day == 32) || (a.month == 9 && a.day == 31) || (a.month == 10 && a.day == 32) || (a.month == 11 && a.day == 31) || (a.month == 12 && a.day == 32))
     {
@@ -53,5 +54,5 @@ int main()
     {
         a.day++;
     }
-    printf("\nday = %i\nmonth = %i\nyear = %i\n", a.day, a.month, a.year);
+    printf("\nday = %.2i\nmonth = %.2i\nyear = %.4i\n", a.day, a.month, a.year);
 }
