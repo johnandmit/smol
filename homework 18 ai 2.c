@@ -41,6 +41,6 @@ int main()
     }
     for (int j = 0; j < i; j++)
     {
-        printf("ho ten = %s\nloai = %s\n", a[j].HoTen, a[j].Loai);
+        printf("\nho ten = %s\nloai = %s\ndiem = %i", a[j].HoTen, a[j].Loai,a[j].Diem);
     }
 }
