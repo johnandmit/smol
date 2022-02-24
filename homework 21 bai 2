@@ -40,7 +40,6 @@ int main()
 
     NodeList *temp = &n1;
     while (temp != NULL)
-        ;
     {
         printf("%d", temp->data);
         temp = temp->next;
@@ -49,6 +48,11 @@ int main()
     int key;
     printf("enter key: ");
     scanf("%i", &key);
+    NodeList * result = searchList(&n1,key);
+    if(result != NULL){
+        printf("Found: %i\n",key);
+    }
+    else
     {
         printf("Not Found: %i\n", key);
     }
