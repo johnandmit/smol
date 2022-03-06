@@ -1,22 +1,27 @@
 #include <stdio.h>
 int main()
 {
-    int n,a[100],x,sum=0;
+    int n, a[100], x, sum = 0;
     printf("enter n: ");
-    scanf("%i",&n);
-    for(int i = 0;i<n;i++)
+    scanf("%i", &n);
+    for (int i = 0; i < n; i++)
     {
         printf("enter stuff in array: ");
-        scanf("%i",&x);
-        a[i]=x;
+        scanf("%i", &x);
+        a[i] = x;
     }
-    for(int i = 0;i<n;i++)
+    if (a[0] > a[1])
     {
-        
-        if(i!=0&&a[i]>a[i-1]&&a[i]>a[i+1]&&i<n-1){
-            sum+=a[i];
-            printf("%i ",a[i]);
+        sum += a[0];
+        printf("%i ", a[0]);
+    }
+    for (int i = 0; i < n; i++)
+    {
+        if (a[i] > a[i - 1] && a[i] > a[i + 1])
+        {
+            sum += a[i];
+            printf("%i ", a[i]);
         }
     }
-    printf("sum = %i",sum);
+    printf("\nsum = %i", sum);
 }
