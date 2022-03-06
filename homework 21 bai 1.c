@@ -12,7 +12,7 @@ int main()
     }
     for (int i = 0; i < n; i++)
     {
-        if ((a[i] > a[i - 1] && a[i] > a[i + 1] || (i == 0 && a[0] > a[1] ) || (i == n - 1 && a[n - 1] > a[n - 2]))
+        if ((a[i] > a[i - 1] && a[i] > a[i + 1]) || (i == 0 && a[0] > a[1] ) || (i == n - 1 && a[n - 1] > a[n - 2]))
         {
             sum += a[i];
             printf("%i ", a[i]);
