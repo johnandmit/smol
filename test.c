@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <string.h>
+#include <ctype.h>
 struct pet
 {
     char name[50];
@@ -37,13 +38,27 @@ int main()
     int e = n - 1;
     while (e >= 0)
     {
-        int biggest = 0;
+        int biggest = 0, yes = 0, yes1 = 0;
         for (int i = 1; i <= e; i++)
         {
+            if (isupper(id[biggest].name[0]))
+            {
+                id[biggest].name[0] = tolower(id[biggest].name[0]);
+                yes = 1;
+            }
+            if (isupper(id[i].name[0]))
+            {
+                id[i].name[0] = tolower(id[i].name[0]);
+                yes1 = 1;
+            }
             if (strcmp(id[biggest].name, id[i].name) < 0)
             {
                 biggest = i;
             }
+            if (yes == 1)
+                id[biggest].name[0] = toupper(id[biggest].name[0]);
+            if (yes1 == 1)
+                id[i].name[0] = toupper(id[i].name[0]);
         }
         struct pet temp = id[biggest];
         id[biggest] = id[e];
