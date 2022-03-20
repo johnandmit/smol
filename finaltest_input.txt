@@ -1,0 +1,15 @@
+Ono,8,Cai
+max,2,Duc
+potah,7,Duc
+hairy,9,Cai
+hairyPPo,7,Duc
+Yomom,2,Cai
+mydad,7,Duc
+Mokr,10,Duc
+Moner,99,Cai
+aterla,8,Duc
+monet,6,Duc
+poopoopeepeeman,13,Duc
+Man,32,Cai
+mit,2,Duc
+hien,-1,Cai
