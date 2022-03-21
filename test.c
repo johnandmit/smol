@@ -30,9 +30,6 @@ int main()
         scanf("%i", &id[i].age);
         printf("enter gender of pet %i(Cai,Duc): ", i);
         scanf("%s", id[i].gender);
-    }
-    for (int i = 0; i < n; i++)
-    {
         store(id[i].name, id[i].age, id[i].gender);
     }
     int e = n - 1;
