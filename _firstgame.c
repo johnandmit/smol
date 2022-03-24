@@ -1,3 +1,4 @@
+//enter this link :https://www.onlinegdb.com/online_c_compiler//
 #include <stdio.h>
 #include <string.h>
 #include <ctype.h>
