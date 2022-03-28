@@ -1,4 +1,4 @@
-//enter this link :https://www.onlinegdb.com/online_c_compiler//
+//enter this link :https://www.onlinegdb.com/online_c_compiler  and put the code in//
 #include <stdio.h>
 #include <string.h>
 #include <ctype.h>
