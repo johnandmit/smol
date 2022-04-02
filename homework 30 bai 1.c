@@ -9,7 +9,6 @@ int main()
 		if (count % 2 == 0)
 		{
 			sum += count;
-			printf("%i\n", count);
 		}
 	}
 	printf("sum = %i", sum);
