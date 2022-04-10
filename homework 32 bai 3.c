@@ -77,15 +77,15 @@ int main()
 	if (fp == NULL)
 	{
 		printf("Failed: ");
-		return 1;
+		return 0;
 	}
 	{
 		struct Array a = wordCounter(fp);
-		int size = a.size / sizeof(struct wordCounter);
+		int size = a.size / sizeof(struct wordCount);
 		for (size_t i = 0; i < size; i++)
 		{
-			struct wordCounter *wc = a.data + i * sizeof(struct wordCounter);
-			printf("%c : %i\n", wc->character, wc->counts);
+			struct wordCount *wc = a.data + i * sizeof(struct wordCount);
+			printf("%s : %i\n", wc->word, wc->counts);
 		}
 	}
 	{
