@@ -10,10 +10,8 @@ struct charCounter
 	int frequency;
 	char character;
 };
-int main()
+void Word(FILE *fp)
 {
-	FILE *fp, *fp2;
-	fp = fopen("C:\\Users\\minhp\\source\\repos\\Stuff\\__textez.txt", "r");
 	struct wordCounter Words[1000];
 	char Temp[100];
 	int i = 0, HighestIndex = 0, NumOfWords = 0;
@@ -40,17 +38,17 @@ int main()
 	{
 		printf("%s %i/%i\n", Words[j].word, Words[j].frequency, NumOfWords);
 	}
-	fclose(fp);
-	printf("\n");
-	fp2 = fopen("C:\\Users\\minhp\\source\\repos\\Stuff\\__textez.txt", "r");
+}
+void character(FILE *fp2)
+{
 	struct charCounter characters[1000];
 	char Temp1;
-	int numberOfCharacters = 0;
+	int i = 0, HighestIndex = 0, numberOfCharacters = 0;
 	i = 0;
 	HighestIndex = 0;
-	while (!feof(fp))
+	while (!feof(fp2))
 	{
-		Temp1 = fgetc(fp);
+		Temp1 = fgetc(fp2);
 		int yes = 1;
 		numberOfCharacters++;
 		for (int j = 0; j < HighestIndex; j++)
@@ -73,5 +71,15 @@ int main()
 	{
 		printf("\t\'%c\' %i/%i", characters[j].character, characters[j].frequency, numberOfCharacters);
 	}
+}
+int main()
+{
+	FILE *fp, *fp2;
+	fp = fopen("C:\\Users\\minhp\\source\\repos\\Stuff\\__textez.txt", "r");
+	Word(fp);
+	fclose(fp);
+	printf("\n");
+	fp2 = fopen("C:\\Users\\minhp\\source\\repos\\Stuff\\__textez.txt", "r");
+	character(fp2);
 	fclose(fp2);
 }
