@@ -2,9 +2,10 @@
 #include <math.h>
 #include <string.h>
 #include <stdlib.h>
+char amLich[100];
 int factorial(int n)
 {
-	int answer = 0;
+	int answer = 1;
 	for (int i = 2; i <= n; i++)
 	{
 		answer *= i;
@@ -22,17 +23,21 @@ int sum1ToN(int n)
 }
 int prime(int n)
 {
+    if(n<2)
+    {
+        return 0;
+    }
 	for (int i = 2; i < sqrt(n); i++)
-	{
-		if (n % i == 0)
-		{
-			printf("n in not prime\n");
-			return 0;
-		}
+    {
+	    if (n % i == 0)
+		    {
+		    	return 0;
+		    }
 	}
-	printf("n is prime\n");
+	return 1;
+	
 }
-int compare(float a, float b)
+float compare(float a, float b)
 {
 	if (a > b)
 		return a;
@@ -49,91 +54,37 @@ int LargeIndex(int n[1000], int size)
 			biggest = n[i];
 		}
 	}
+	return biggest;
 }
-int DoungToAm(int nam)
+int SmallIndex(int n[1000], int size)
 {
-	char amlich[12] = "abc";
-	int can = (nam % 60 + 7) % 10, chi = (nam % 60 + 9) % 12;
-	switch (can)
+	int smallest = n[0];
+	for (int i = 0; i < size; i++)
 	{
-	case 1:
-		strcpy(amlich, "giap");
-		break;
-	case 2:
-		strcpy(amlich, "at");
-		break;
-	case 3:
-		strcpy(amlich, "binh");
-		break;
-	case 4:
-		strcpy(amlich, "dinh");
-		break;
-	case 5:
-		strcpy(amlich, "mau");
-		break;
-	case 6:
-		strcpy(amlich, "ky");
-		break;
-		strcpy(amlich, "Canh");
-		break;
-	case 8:
-		strcpy(amlich, "tan");
-		break;
-	case 9:
-		strcpy(amlich, "nham");
-		break;
-	case 10:
-		strcpy(amlich, "quy");
-		break;
+		if (smallest >= n[i])
+		{
+			smallest = n[i];
+		}
 	}
-	switch (chi)
-	{
-	case 1:
-		strcat(amlich, " ty");
-		break;
-	case 2:
-		strcat(amlich, " suu");
-		break;
-	case 3:
-		strcat(amlich, " dan");
-		break;
-	case 4:
-		strcat(amlich, " mao");
-		break;
-	case 5:
-		strcat(amlich, " thin");
-		break;
-	case 6:
-		strcat(amlich, " ty");
-		break;
-	case 7:
-		strcat(amlich, " ngo");
-		break;
-	case 8:
-		strcat(amlich, " mui");
-		break;
-	case 9:
-		strcat(amlich, " than");
-		break;
-	case 10:
-		strcat(amlich, " dau");
-		break;
-	case 11:
-		strcat(amlich, " tuat");
-		break;
-	case 12:
-		strcat(amlich, " hoi");
-		break;
-	}
-	printf("%s\n", amlich);
+	return smallest;
+}
+const char* DoungToAm(int nam)
+{
+	char can1[11][5] = {"giap","at","binh", "dinh", "mau", "ky", "Canh", "tan", "nham", "quy"};
+	char chi1[13][5] = {" ty.", " suu", " dan", " mao", " thin", " ty'", " ngo", " mui", " than", " dau", " tuat", " hoi"};
+	int can = (nam + 6) % 10, chi = (nam + 8) % 12;
+	strcpy(amLich,can1[can]);
+	strcat(amLich,chi1[chi]);
+	return amLich;
 }
 int main()
 {
-	int n[7] = {5, 2, 7, 2, 1, 9, 6};
-	factorial(5);
-	sum1ToN(10);
-	prime(65);
-	compare(5, 9);
-	LargeIndex(n, 7);
-	DoungToAm(2022);
+	int n[7] = {5, 12, 7, 3, 4, 9, 6};
+// 	printf("%i\n",factorial(5));
+// 	printf("%i\n",sum1ToN(10));
+// 	printf("%i\n",prime(0));
+// 	printf("%f\n",compare(5, 9));
+// 	printf("%i\n",LargeIndex(n, 7));
+// printf("%i\n",SmallIndex(n, 7));
+	printf("%s",DoungToAm(2022));
 }
