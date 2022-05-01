@@ -1,118 +1,112 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-int host(int gamemode)
+struct param
 {
-	int guess = -1, i = 0, numOfGuess, maxRange;
-	switch (gamemode)
-	{
-	case 1:
-		numOfGuess = 1000;
-		maxRange = 100;
-		break;
-	case 2:
-		numOfGuess = 10;
-		maxRange = 100;
-		break;
-	case 3:
-		numOfGuess = 8;
-		maxRange = 150;
-		break;
-	case 4:
-		numOfGuess = 7;
-		maxRange = 200;
-		break;
-	case 5:
-		numOfGuess = 7;
-		maxRange = 300;
-		break;
-	default:
-		printf("invalid gamemode");
-		return 0;
-		break;
-	}
-	int random = rand() % maxRange;
-	printf("in this mode, you can only guess %i times, the corrct number will now be in between 0 and %i\nthe game will end when you get the number right or you run our of guesses\n", numOfGuess, maxRange);
-	while (guess != random && i < numOfGuess)
-	{
-		printf("enter guess %i: ", i);
-		scanf("%i", &guess);
-		i++;
-		if (guess < random)
+	int numOfGuess;
+	int maxRange;
+};
+
+
+int compare(int a, int b)
+{
+		if (a < b)
 		{
 			printf("your guess is lower than the answer, try again\n");
 		}
-		else if (guess > random)
+		else if (a > b)
 		{
 			printf("your guess is higher than the answer, try again\n");
 		}
 		else
 		{
 			printf("GG!");
-			break;
+			return 1;
 		}
+}
+
+
+int sellect_gamemode()
+{
+	int gamemode;
+	printf("enter diffuculty: 1 for easy, 2 for nomal, 3 for hard, 4 for chad, 5 for impossible and 6 for custom: ");
+	scanf("%i",&gamemode);
+	return gamemode;
+}
+
+
+struct param gen_param_gamemode(int gamemode)
+{
+	int guess = -1, i = 0;
+	struct param parameter;
+	switch (gamemode)
+	{
+	case 1:
+		parameter.numOfGuess = 1000;
+		parameter.maxRange = 100;
+		break;
+	case 2:
+		parameter.numOfGuess = 10;
+		parameter.maxRange = 100;
+		break;
+	case 3:
+		parameter.numOfGuess = 8;
+		parameter.maxRange = 150;
+		break;
+	case 4:
+		parameter.numOfGuess = 7;
+		parameter.maxRange = 200;
+		break;
+	case 5:
+		parameter.numOfGuess = 7;
+		parameter.maxRange = 300;
+		break;
+	case 6:
+		printf("enter number of guesses you want to have: ");
+		scanf("%i", &parameter.numOfGuess);
+		printf("enter max range: ");
+		scanf("%i", &parameter.maxRange);
+		break;
+	default:
+		printf("invalid gamemode");
+		break;
+	}
+	return parameter;
+}
+
+
+void main_play_host(int maxRange, int numOfGuess)
+{
+	int random = rand() % maxRange, guess = -1, i = 0;
+	printf("in this mode, you can only guess %i times, the corrct number will now be in between 0 and %i\nthe game will end when you get the number right or you run our of guesses\n", numOfGuess, maxRange);
+	while (guess != random && i < numOfGuess)
+	{
+		printf("enter guess %i: ", i);
+		scanf("%i", &guess);
+		i++;
+		compare(guess, random);
 	}
 }
-void race()
-{
-	int random1 = rand() % 100, random2 = rand() % 100;
-	printf("in this mode, you can guess as many time as you can, the corrct number will now be in between 0 and 100\nthe game will end when p1 or p2 get the number right, the winner is the first one to guess the correct number\n");
-	char p1[50], p2[50];
-	int guess = -1, i1 = 0, i2 = 0;
-	printf("enter p1 name: ");
-	scanf("%s", p1);
-	printf("enter p2 name: ");
-	scanf("%s", p2);
-	while (1)
-	{
-		printf("%s, enter guess %i: ", p1, i1 + 1);
-		scanf("%i", &guess);
-		i1++;
-		if (guess < random1)
-		{
-			printf("%s's guess is lower than the answer, try again later\n", p1);
-		}
-		else if (guess > random1)
-		{
-			printf("%s's guess is higher than the answer, try again later\n", p1);
-		}
-		else
-		{
-			printf("game over, %s is the winner!", p1);
-			break;
-		}
 
-		printf("%s, enter guess %i: ", p2, i2 + 1);
-		scanf("%i", &guess);
-		i2++;
-		if (guess < random2)
-		{
-			printf("%s's guess is lower than the answer, try again later\n", p2);
-		}
-		else if (guess > random2)
-		{
-			printf("%s's guess is higher than the answer, try again later\n", p2);
-		}
-		else
-		{
-			printf("game over, %s is the winner!", p2);
-			break;
-		}
-	}
-	printf("\nGG!");
+
+void single_player()
+{
+	struct param parameter;
+	int gamemode;
+	gamemode  = sellect_gamemode();
+	parameter = gen_param_gamemode(gamemode);
+	main_play_host(parameter.maxRange,parameter.numOfGuess);
+
+}
+
+
+void menu()
+{
+	printf("\t\tWelcome\n\t\t  to\n\t    NUMBER GUESSING!\n");
+	single_player;
 }
 int main()
 {
 	srand(time(0));
-	int difficulty;
-	printf("enter:\n1 for easy\n2 for normal\n3 for hard\n4 for chad gamers\n5 for impossible\n6 for race\nenter difficulty: ");
-	scanf("%i", &difficulty);
-	if(difficulty == 6)
-	{
-		race();
-	}
-	else
-	{
-		host(difficulty);
-	}
+	menu();
 }
