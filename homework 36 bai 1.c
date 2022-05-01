@@ -81,11 +81,12 @@ void main_play_host(int maxRange, int numOfGuess)
 	printf("in this mode, you can only guess %i times, the corrct number will now be in between 0 and %i\nthe game will end when you get the number right or you run our of guesses\n", numOfGuess, maxRange);
 	while (guess != random && i < numOfGuess)
 	{
-		printf("enter guess %i: ", i);
+		printf("enter guess %i: ", i+1);
 		scanf("%i", &guess);
 		i++;
 		compare(guess, random);
 	}
+	printf("good try but the answer is: %i",random);
 }
 
 
@@ -102,7 +103,7 @@ void single_player()
 
 void menu()
 {
-	printf("\t\tWelcome\n\t\t  to\n\t    NUMBER GUESSING!\n");
+	printf("\t\t\t\t\t\tWelcome\n\t\t\t\t\t\t  to\n\t\t\t\t\t    NUMBER GUESSING!\n");
 	single_player();
 }
 int main()
