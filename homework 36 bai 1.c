@@ -103,7 +103,7 @@ void single_player()
 void menu()
 {
 	printf("\t\tWelcome\n\t\t  to\n\t    NUMBER GUESSING!\n");
-	single_player;
+	single_player();
 }
 int main()
 {
