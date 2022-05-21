@@ -18,14 +18,15 @@ int costCaculator(int kWh)
 }
 int main()
 {
-	char Name[30];
-	int kWh, cost;
+	char Name[100][30];
+	int kWh[100], i = 0, cost[100];
 	FILE *fp = fopen("C:\\Users\\minhp\\source\\repos\\Stuff\\file_electric_2205.csv", "r");
 	FILE *fp2 = fopen("C:\\Users\\minhp\\source\\repos\\Stuff\\output_electric_2205.csv", "w");
-	while (fscanf(fp, "%s %d", Name, &kWh) != EOF)
+	while (fscanf(fp, "%s %d", Name[i], &kWh[i]) != EOF)
 	{
-		cost = costCaculator(kWh);
-		fprintf(fp2, "%s, %d\n", Name, cost);
+		cost[i] = costCaculator(kWh[i]);
+		fprintf(fp2, "%s, %d, %d\n", Name[i], kWh[i], cost[i]);
+		i++;
 	}
 	fclose(fp);
 	fclose(fp2);
