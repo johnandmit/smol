@@ -2,11 +2,11 @@
 #include <math.h>
 int IsPrime(int n)
 {
-	if(n == 2)
+	if (n == 2)
 	{
 		return 1;
 	}
-	for (int i = 2; i < sqrt(n)+1; i++)
+	for (int i = 2; i < sqrt(n) + 1; i++)
 	{
 		if (n % i == 0)
 		{
@@ -15,21 +15,25 @@ int IsPrime(int n)
 	}
 	return 1;
 }
-void printer(int max, int min, int columns)
+void printer( int min, int max, int columns)
 {
 	int columnsCount = 0, prime;
-	printf("Table of Primes\n===============\nLower limit:  %-10i\nUpper limit:  %-10i\n# of columns: %-10i\n", max, min, columns);
-	if(min < 2)
+	printf("\n\nTable of Primes\n");
+	printf("===============\n");
+	printf("Lower limit:  %-10i\n", min);
+	printf("Upper limit:  %-10i\n", max);
+	printf("# of columns: %-10i\n", columns);
+	if (min < 2)
 	{
 		min = 2;
 	}
 	for (int i = min; i < max; i++)
 	{
-		if(IsPrime(i))
+		if (IsPrime(i))
 		{
-			printf("%10i",i);
+			printf("%10i", i);
 			columnsCount++;
-			if(columnsCount >= columns)
+			if (columnsCount >= columns)
 			{
 				printf("\n");
 				columnsCount = 0;
@@ -40,11 +44,11 @@ void printer(int max, int min, int columns)
 int main()
 {
 	int max, min, columns;
-	printf("enter max: ");
-	scanf("%i", &max);
 	printf("enter min: ");
 	scanf("%i", &min);
+	printf("enter max: ");
+	scanf("%i", &max);
 	printf("enter columns: ");
 	scanf("%i", &columns);
-	printer(max, min, columns);
+	printer(min, max, columns);
 }
