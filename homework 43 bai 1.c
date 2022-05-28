@@ -6,7 +6,7 @@ void check(int a, int b, int c)
 	{
 		float perimeter = (a + b + c) / 2;
 		float area = sqrt(perimeter * (perimeter - a) * (perimeter - b) * (perimeter - c));
-		printf("area: %f\nperimeter: %f", area, perimeter);
+		printf("area: %f\nperimeter: %f", area, perimeter*2);
 	}
 	else
 	{
